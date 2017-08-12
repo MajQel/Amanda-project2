@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.new(recipe_params)
 
 		if @recipe.save
-			redirect_to @recipe, notice: "Successfuly created new recipe"
+			redirect_to @recipe, notice: "Przepis zostal dodany"
 		else
 			render 'new'
 		end
@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:tittle, :description)
+		params.require(:recipe).permit(:tittle, :description, :image )
 	end
 
 	def find_recipe
