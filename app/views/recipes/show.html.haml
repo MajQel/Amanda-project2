@@ -1,6 +1,7 @@
-%h1= @recipe.tittle
-%p= @recipe.description
-
+.container
+	%h1= @recipe.tittle
+	%p= @recipe.description
+	= image_tag @recipe.image.url(:medium)
 = link_to "Back", root_path, class: "btn btn-default"
 = link_to "Edytuj", edit_recipe_path, class: "btn btn-default"
 = link_to "Usun", recipe_path, method: :delete, data: {confirm: "czy napewno?" }, class: "btn btn-default"
