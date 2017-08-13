@@ -34,7 +34,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'paperclip', '~> 5.1'
-gem 'cocoon', '~> 1.2', '>= 1.2.10'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
