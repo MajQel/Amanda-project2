@@ -6,7 +6,7 @@
 			Prevent this recipe from saving
 		%ul
 			- @recipe.errors.full_messages.each do |msg|
-				%li = msg
+				%li= msg
 	.panel-body
 		= f.input :tittle, input_html: { class: 'form-control' }
 		= f.input :description, input_html: { class: 'form-control' }
@@ -15,18 +15,17 @@
 			.col-md-6
 				%h3 Skladniki
 				#ingredients
-					= f.simple_fields_for :ingredients do |ingredients|
-						= redner 'ingredients_fields', f: ingredient
+					= f.simple_fields_for :ingredients do |ingredient|
+						= render 'ingredient_fields', f: ingredient
 					.links
 						= link_to_add_association 'Dodaj skladnik', f, :ingredients, class: "btn btn-default add-button"
 			.col-md-6
 				%h3 Wskazowki
 				#directions
 					= f.simple_fields_for :directions do |direction|
-						= render 'directions_fields', f: direction
+						= render 'direction_fields', f: direction
 					.links
 						= link_to_add_association 'Dodaj krok', f, :directions, class: "btn btn-default add-button"
 
-		%br/
 
 		= f.button :submit, class: "btn btn-primary"

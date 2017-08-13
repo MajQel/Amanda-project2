@@ -1,7 +1,28 @@
-.container
-	%h1= @recipe.tittle
-	%p= @recipe.description
-	= image_tag @recipe.image.url(:medium)
-= link_to "Back", root_path, class: "btn btn-default"
-= link_to "Edytuj", edit_recipe_path, class: "btn btn-default"
-= link_to "Usun", recipe_path, method: :delete, data: {confirm: "czy napewno?" }, class: "btn btn-default"
+.main_content
+	#recipe_top.row
+		.col-md-4
+			= image_tag @recipe.image.url(:medium), class: "recipe_image"
+		.cold-md-8
+			#recipe_info
+				%h1= @recipe.tittle
+				%p= @recipe.description
+	.row
+		.col-md-6
+			#ingredient
+				%h2 Skladniki:
+				%ul
+					- @recipe.ingredients.each do |ingredient|
+						%li= ingredient.name
+
+		.col-md-6
+			#directions
+				%h2 Wskazówki
+				%ul
+					- @recipe.directions.each do |direction|
+						%li= direction.step
+
+	.row
+		.col-md-12
+			= link_to "Back", root_path, class: "btn btn-default"
+			= link_to "Edytuj", edit_recipe_path, class: "btn btn-default"
+			= link_to "Usun", recipe_path, method: :delete, data: {confirm: "czy napewno?" }, class: "btn btn-default"
