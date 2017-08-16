@@ -10,6 +10,7 @@
 		.col-md-2
 			#Parameters
 				%p Czas przygotowania: #{number_with_precision(@recipe.preparation_time, precision: 0)} min.
+				%p Ilość porcji: #{@recipe.portion}
 	.row
 		.col-md-6
 			#ingredient
