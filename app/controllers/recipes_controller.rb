@@ -25,6 +25,8 @@ class RecipesController < ApplicationController
 
 	def edit
 	end
+	def search
+	end
 
 	def update
 		if @recipe.update(recipe_params)
